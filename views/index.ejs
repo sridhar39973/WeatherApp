@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: pink;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            text-align: center;
+        }
+        form {
+            text-align: center;
+        }
+        label {
+            font-weight: bold;
+        }
+        input[type="text"] {
+            padding: 8px;
+            margin: 5px;
+            width: 200px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        button {
+            padding: 8px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .weather-details {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+        .error {
+            color: red;
+            font-style: italic;
+        }
+
+        /* Responsive styles */
+        @media only screen and (max-width: 768px) {
+            .container {
+                max-width: 80%;
+            }
+            input[type="text"] {
+                width: 100%;
+            }
+        }
+
+        @media only screen and (max-width: 480px) {
+            .container {
+                max-width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Weather App</h1>
+        <form action="/" method="post">
+            <label for="city">Enter City:</label>
+            <input type="text" id="city" name="city" required>
+            <button type="submit">Get Weather</button>
+        </form>
+
+        <% if (locals.data) { %>
+            <div class="weather-details">
+                <h2>Weather Details for <%= data.name %></h2>
+                <p>Temperature: <%= data.main.temp %> °F</p>
+                <p>Clouds: <%= data.weather[0].description %></p>
+                <p>Humidity: <%= data.main.humidity %>%</p>
+                <p>Wind Speed: <%= data.wind.speed %> mph</p>
+            </div>
+        <% } else if (locals.error) { %>
+            <p class="error"><%= error %></p>
+        <% } %>
+    </div>
+</body>
+</html>
