@@ -11,10 +11,11 @@
 
     app.post("/", async (req, res) => {
         try {
-            const city = req.body.city;
+            var city = req.body.city;
+            const city_=city.trim();
             console.log("City:", city); 
             const APIkey = '34277b51cbf01367539713078ac5f02e';
-            const response = await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=${APIkey}`);
+            const response = await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${city_}&units=imperial&appid=${APIkey}`);
             console.log("Response Data:", response.data);
             res.render("index.ejs", { data: response.data});
         } catch (error) {
