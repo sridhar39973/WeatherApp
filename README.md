@@ -51,15 +51,7 @@ bash
 
 Copy code
 
-weather-app/
-│
-├── app.js              # Main application file
-├── views/              # EJS templates
-│   └── index.ejs       # Main page template
-├── public/             # Static assets (CSS, images)
-│   └── styles.css      # Custom styles
-├── .env                # Environment variables
-└── README.md           # Project documentation
+![image](https://github.com/sridhar39973/WeatherApp/assets/100403258/083fb73b-39f8-4f59-bfbf-37aa697bacff)
 
 ## Usage
 
