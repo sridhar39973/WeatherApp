@@ -51,7 +51,7 @@ bash
 
 Copy code
 
-`weather-app/
+weather-app/
 │
 ├── app.js              # Main application file
 ├── views/              # EJS templates
@@ -59,7 +59,7 @@ Copy code
 ├── public/             # Static assets (CSS, images)
 │   └── styles.css      # Custom styles
 ├── .env                # Environment variables
-└── README.md           # Project documentation` 
+└── README.md           # Project documentation
 
 ## Usage
 
