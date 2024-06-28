@@ -1,4 +1,4 @@
-# Weather Application using Node.js and Express.js
+#  🌤️⛈️🌦️ Weather Application using Node.js and Express.js
 
 This application allows users to fetch real-time weather data using the OpenWeatherMap API based on the city entered.
 
